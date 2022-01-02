@@ -1,3 +1,5 @@
+@use "../untils/box-shadow.scss";
+@use "../untils/zoom-effect.scss";
 .explore {
   text-align: center;
   background-color: #fafafa;
@@ -9,7 +11,6 @@
     padding: 1rem 2rem;
     border: none;
     border-radius: 2rem;
-    box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
     background-image: linear-gradient(
       to top,
       rgba(147, 86, 220, 0.9),
@@ -17,9 +18,9 @@
     );
     cursor: pointer;
     transition: transform 200ms;
+    @include box-shadow.basic-shadow;
   }
   & button:hover {
-    transform: scale(1.1);
-    opacity: 0.7;
+    @include zoom-effect.zoom-effect;
   }
 }

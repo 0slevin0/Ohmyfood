@@ -1,0 +1,25 @@
+@use "../untils/zoom-effect.scss";
+@use "../untils/box-shadow.scss";
+
+.fonction {
+  & ol {
+    display: flex;
+    gap: 2rem;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  & li {
+    background-color: #f6f6f6;
+    padding: 1rem 2rem;
+    border: 1px solid black;
+    flex-grow: 1;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: transform 200ms;
+    @include box-shadow.basic-shadow;
+    &:hover {
+      @include zoom-effect.zoom-effect;
+    }
+  }
+}
