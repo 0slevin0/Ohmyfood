@@ -35,7 +35,7 @@ header {
   padding: 1rem;
 }
 .explore button {
-  color: white;
+  color: #fff;
   font-weight: 300;
   font-size: 1.5rem;
   padding: 1rem 2rem;
@@ -47,13 +47,20 @@ header {
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
 .explore button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   opacity: 0.7;
 }
 
+.fonction {
+  counter-reset: number;
+}
+.fonction h2 {
+  margin-left: 2rem;
+}
 .fonction ol {
   display: flex;
   gap: 2rem;
+  padding: 1.5rem;
 }
 @media (max-width: 768px) {
   .fonction ol {
@@ -61,18 +68,37 @@ header {
   }
 }
 .fonction li {
-  background-color: #f6f6f6;
-  padding: 1rem 2rem;
-  border: 1px solid black;
+  position: relative;
+  list-style-type: none;
+  background-color: #f3f3f3;
+  padding: 1.5rem 2rem;
   flex-grow: 1;
   border-radius: 1rem;
   cursor: pointer;
   transition: transform 200ms;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
+.fonction li::before {
+  content: counter(number);
+  counter-increment: number;
+  background-color: #9356dc;
+  color: #fff;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 1rem;
+  left: -1rem;
+}
 .fonction li:hover {
-  transform: scale(1.1);
-  opacity: 0.7;
+  transform: scale(1.05);
+  color: #9356dc;
+  background-color: #d3c7e9;
+}
+.fonction li i.fas {
+  margin-right: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

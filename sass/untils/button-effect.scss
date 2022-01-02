@@ -1,0 +1,7 @@
+@use "../untils/colors.scss";
+
+@mixin button-effect {
+  transform: scale(1.05);
+  color: colors.$purple;
+  background-color: colors.$lightpurple;
+}

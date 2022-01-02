@@ -1,11 +1,13 @@
 @use "../untils/box-shadow.scss";
 @use "../untils/zoom-effect.scss";
+@use "../untils/colors.scss";
+
 .explore {
   text-align: center;
-  background-color: #fafafa;
+  background-color: colors.$lightgrey;
   padding: 1rem;
   & button {
-    color: white;
+    color: colors.$white;
     font-weight: 300;
     font-size: 1.5rem;
     padding: 1rem 2rem;

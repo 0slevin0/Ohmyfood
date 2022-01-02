@@ -1,25 +1,51 @@
 @use "../untils/zoom-effect.scss";
 @use "../untils/box-shadow.scss";
+@use "../untils/variables.scss";
+@use "../untils/colors.scss";
+@use "../untils/button-effect.scss";
 
 .fonction {
+  & h2 {
+    margin-left: 2rem;
+  }
+  counter-reset: number;
   & ol {
     display: flex;
     gap: 2rem;
+    padding: 1.5rem;
     @media (max-width: 768px) {
       flex-direction: column;
     }
   }
   & li {
-    background-color: #f6f6f6;
-    padding: 1rem 2rem;
-    border: 1px solid black;
+    position: relative;
+    &::before {
+      content: counter(number);
+      counter-increment: number;
+      background-color: colors.$purple;
+      color: colors.$white;
+      width: 2 * variables.$fonction-ball-height;
+      height: 2 * variables.$fonction-ball-height;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      position: absolute;
+      bottom: variables.$fonction-ball-height;
+      left: -1 * variables.$fonction-ball-height;
+    }
+    list-style-type: none;
+    background-color: colors.$grey;
+    padding: 1.5rem 2rem;
     flex-grow: 1;
     border-radius: 1rem;
     cursor: pointer;
     transition: transform 200ms;
     @include box-shadow.basic-shadow;
     &:hover {
-      @include zoom-effect.zoom-effect;
+      @include button-effect.button-effect;
+    }
+    & i.fas {
+      margin-right: 1rem;
     }
   }
 }
