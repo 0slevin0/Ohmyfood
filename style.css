@@ -11,6 +11,16 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+h2 {
+  padding: 2rem 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   font-family: "Shrikhand", cursive;
   text-align: center;
@@ -54,9 +64,6 @@ header {
 .fonction {
   counter-reset: number;
 }
-.fonction h2 {
-  margin-left: 2rem;
-}
 .fonction ol {
   display: flex;
   gap: 2rem;
@@ -89,16 +96,118 @@ header {
   place-items: center;
   border-radius: 50%;
   position: absolute;
-  bottom: 1rem;
+  top: 50%;
   left: -1rem;
+  transform: translateY(-50%);
 }
 .fonction li:hover {
   transform: scale(1.05);
-  color: #9356dc;
   background-color: #d3c7e9;
+}
+.fonction li:hover i.fas {
+  color: #9356dc;
 }
 .fonction li i.fas {
   margin-right: 1rem;
+  font-size: 1rem;
+}
+
+.restaurant {
+  background-color: #f3f3f3;
+  margin-bottom: 2rem;
+}
+.restaurant h2 {
+  margin-bottom: 2rem;
+}
+.restaurant .restaurant__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .restaurant .restaurant__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.restaurant .restaurant__cards .new {
+  position: relative;
+}
+.restaurant .restaurant__cards .new::before {
+  content: "Nouveau";
+  position: absolute;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #99e2d0;
+  color: #1b6150;
+  display: grid;
+  place-items: center;
+  top: 1rem;
+  right: 0.75rem;
+  animation-duration: 0.8s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+@keyframes clignoter {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.restaurant .card {
+  background-color: #fff;
+  border-radius: 0 0 1rem 1rem;
+}
+.restaurant .card__image {
+  border-radius: 1rem 1rem 0 0;
+  height: 15rem;
+  background-size: cover;
+}
+.restaurant .card__image-1 {
+  background-image: url("../../assets/menu-1.jpg");
+}
+.restaurant .card__image-2 {
+  background-image: url("../../assets/menu-2.jpg");
+}
+.restaurant .card__image-3 {
+  background-image: url("../../assets/menu-3.jpg");
+}
+.restaurant .card__image-4 {
+  background-image: url("../../assets/menu-4.jpg");
+}
+.restaurant .card__description {
+  position: relative;
+}
+.restaurant .card__description h3,
+.restaurant .card__description p {
+  margin: 0.5rem;
+}
+.restaurant .card__description h3 {
+  padding-top: 0.5rem;
+}
+.restaurant .card__description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+footer {
+  background-color: #353535;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+footer h2 {
+  font-family: "Shrikhand", cursive;
+  font-weight: 500;
+  padding: 1rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */

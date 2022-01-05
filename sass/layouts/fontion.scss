@@ -1,13 +1,10 @@
-@use "../untils/zoom-effect.scss";
-@use "../untils/box-shadow.scss";
-@use "../untils/variables.scss";
-@use "../untils/colors.scss";
-@use "../untils/button-effect.scss";
+@use "../utils/zoom-effect.scss";
+@use "../utils/box-shadow.scss";
+@use "../utils/variables.scss";
+@use "../utils/colors.scss";
+@use "../utils/button-effect.scss";
 
 .fonction {
-  & h2 {
-    margin-left: 2rem;
-  }
   counter-reset: number;
   & ol {
     display: flex;
@@ -30,8 +27,9 @@
       place-items: center;
       border-radius: 50%;
       position: absolute;
-      bottom: variables.$fonction-ball-height;
+      top: 50%;
       left: -1 * variables.$fonction-ball-height;
+      transform: translateY(-50%);
     }
     list-style-type: none;
     background-color: colors.$grey;
@@ -43,9 +41,13 @@
     @include box-shadow.basic-shadow;
     &:hover {
       @include button-effect.button-effect;
+      i.fas {
+        color: colors.$purple;
+      }
     }
     & i.fas {
       margin-right: 1rem;
+      font-size: 1rem;
     }
   }
 }
