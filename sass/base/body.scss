@@ -1,4 +1,3 @@
-@use "../sass/utils/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
@@ -11,11 +10,6 @@
 body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
-}
-
-h2 {
-  padding: 2rem 0;
-  margin: 0;
 }
 
 a {

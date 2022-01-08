@@ -1,7 +1,7 @@
-@use "./sass/base.scss";
+@use "./sass/base/body.scss";
 @use "./sass/layouts/header.scss";
-@use "./sass/layouts/city.scss";
-@use "./sass/layouts/explore.scss";
-@use "./sass/layouts/fontion.scss";
-@use "./sass/layouts/restaurant.scss";
+@use "./sass/layouts/main-home.scss";
 @use "./sass/layouts/footer.scss";
+@use "./sass/utils/mixins.scss";
+@use "./sass/utils/variables.scss";
+@use "./sass/components/button-checkbox-like.scss";

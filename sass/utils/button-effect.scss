@@ -1,6 +1,0 @@
-@use "../utils/colors.scss";
-
-@mixin button-effect {
-  transform: scale(1.05);
-  background-color: colors.$lightpurple;
-}

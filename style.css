@@ -11,11 +11,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-h2 {
-  padding: 2rem 0;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -29,7 +24,8 @@ header {
   position: relative;
 }
 
-.city {
+/*section search*/
+.location {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,12 +33,23 @@ header {
   background-color: #f3f3f3;
   text-align: center;
   padding: 1rem;
+  box-shadow: #353535;
+}
+.location input {
+  border: none;
+  background: #f3f3f3;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 5px;
+  text-align: center;
+  width: 150px;
 }
 
+/*section explore*/
 .explore {
   text-align: center;
   background-color: #fafafa;
-  padding: 1rem;
+  padding: 2rem 0;
 }
 .explore button {
   color: #fff;
@@ -54,27 +61,33 @@ header {
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   cursor: pointer;
   transition: transform 200ms;
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0.05rem 0.05rem 5px #353535;
 }
 .explore button:hover {
   transform: scale(1.05);
   opacity: 0.7;
 }
 
-.fonction {
+/*section process*/
+.process {
+  padding: 2rem 0;
   counter-reset: number;
 }
-.fonction ol {
+.process h2 {
+  padding: 0rem 2rem;
+}
+.process ol {
   display: flex;
   gap: 2rem;
-  padding: 1.5rem;
+  padding: 0 3rem;
 }
 @media (max-width: 768px) {
-  .fonction ol {
+  .process ol {
+    display: flex;
     flex-direction: column;
   }
 }
-.fonction li {
+.process li {
   position: relative;
   list-style-type: none;
   background-color: #f3f3f3;
@@ -83,9 +96,9 @@ header {
   border-radius: 1rem;
   cursor: pointer;
   transition: transform 200ms;
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0.05rem 0.05rem 5px #353535;
 }
-.fonction li::before {
+.process li::before {
   content: counter(number);
   counter-increment: number;
   background-color: #9356dc;
@@ -100,21 +113,27 @@ header {
   left: -1rem;
   transform: translateY(-50%);
 }
-.fonction li:hover {
+.process li:hover {
   transform: scale(1.05);
-  background-color: #d3c7e9;
+  background-color: #e4d5f6;
 }
-.fonction li:hover i.fas {
+.process li:hover i.fas {
   color: #9356dc;
 }
-.fonction li i.fas {
+.process li i.fas {
   margin-right: 1rem;
   font-size: 1rem;
 }
 
+/*section restaurant*/
 .restaurant {
   background-color: #f3f3f3;
-  margin-bottom: 2rem;
+  padding: 4rem 6rem;
+}
+@media (max-width: 768px) {
+  .restaurant {
+    padding: 1rem 1rem;
+  }
 }
 .restaurant h2 {
   margin-bottom: 2rem;
@@ -124,8 +143,9 @@ header {
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .restaurant .restaurant__cards {
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -162,11 +182,11 @@ header {
 }
 .restaurant .card {
   background-color: #fff;
-  border-radius: 0 0 1rem 1rem;
+  border-radius: 1rem 1rem;
 }
 .restaurant .card__image {
   border-radius: 1rem 1rem 0 0;
-  height: 15rem;
+  height: 20rem;
   background-size: cover;
 }
 .restaurant .card__image-1 {
@@ -200,14 +220,74 @@ header {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   background-color: #353535;
   color: #fff;
-  padding: 1rem 2rem;
+  padding: 1rem;
+}
+@media (max-width: 768px) {
+  footer {
+    align-items: flex-start;
+  }
 }
 footer h2 {
   font-family: "Shrikhand", cursive;
   font-weight: 500;
-  padding: 1rem 0;
+}
+footer p {
+  margin: 0;
+}
+footer p:hover {
+  text-decoration: underline;
+}
+footer i {
+  padding: 0 0.5rem 0 0;
+}
+
+.checkbox-like {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.checkbox-like.checkbox-like--position {
+  position: initial;
+  margin-top: 20px;
+}
+
+.checkbox-like input[type=checkbox]:checked ~ .unchecked {
+  display: none;
+}
+
+.checkbox-like input[type=checkbox]:checked ~ .checked {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0);
+}
+
+.checkbox-like input[type=checkbox],
+.checkbox-like .checked {
+  display: none;
+  animation: like 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    background: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+    -webkit-background-clip: text;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
