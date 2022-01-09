@@ -20,10 +20,11 @@
   text-align: center;
   background-color: variables.$lightgrey;
   padding: 2rem 0;
+  font-size: 1.1rem;
   & button {
     color: variables.$white;
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     padding: 1rem 2rem;
     border: none;
     border-radius: 2rem;
@@ -148,6 +149,9 @@
   .card {
     background-color: variables.$white;
     border-radius: 1rem 1rem;
+    &:hover {
+      @include mixins.zoom-effect;
+    }
     &__image {
       border-radius: 1rem 1rem 0 0;
       height: 20rem;
@@ -155,7 +159,7 @@
     }
     @for $i from 1 through 4 {
       &__image-#{$i} {
-        background-image: url("../../assets/menu-#{$i}.jpg");
+        background-image: url("../assets/menu-#{$i}.jpg");
       }
     }
     &__description {
