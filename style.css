@@ -66,7 +66,7 @@ header {
 }
 .explore button:hover {
   transform: scale(1.05);
-  opacity: 0.7;
+  -webkit-filter: brightness(100%);
 }
 
 /*section process*/
@@ -129,7 +129,7 @@ header {
 /*section restaurant*/
 .restaurant {
   background-color: #f3f3f3;
-  padding: 4rem 6rem;
+  padding: 2rem 8rem 4rem;
 }
 @media (max-width: 768px) {
   .restaurant {
@@ -142,7 +142,7 @@ header {
 .restaurant .restaurant__cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 4rem;
 }
 @media (max-width: 768px) {
   .restaurant .restaurant__cards {
@@ -184,10 +184,16 @@ header {
 .restaurant .card {
   background-color: #fff;
   border-radius: 1rem 1rem;
+  -webkit-filter: brightness(75%);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .restaurant .card:hover {
   transform: scale(1.05);
-  opacity: 0.7;
+  -webkit-filter: brightness(100%);
 }
 .restaurant .card__image {
   border-radius: 1rem 1rem 0 0;
@@ -195,16 +201,16 @@ header {
   background-size: cover;
 }
 .restaurant .card__image-1 {
-  background-image: url("../assets/menu-1.jpg");
+  background-image: url("assets/menu-1.jpg");
 }
 .restaurant .card__image-2 {
-  background-image: url("../assets/menu-2.jpg");
+  background-image: url("assets/menu-2.jpg");
 }
 .restaurant .card__image-3 {
-  background-image: url("../assets/menu-3.jpg");
+  background-image: url("assets/menu-3.jpg");
 }
 .restaurant .card__image-4 {
-  background-image: url("../assets/menu-4.jpg");
+  background-image: url("assets/menu-4.jpg");
 }
 .restaurant .card__description {
   position: relative;
@@ -277,7 +283,7 @@ footer i {
 .checkbox-like input[type=checkbox],
 .checkbox-like .checked {
   display: none;
-  animation: like 2s;
+  animation: like 200ms;
   animation-fill-mode: forwards;
 }
 

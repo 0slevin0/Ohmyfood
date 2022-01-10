@@ -96,7 +96,7 @@
 /*section restaurant*/
 .restaurant {
   background-color: variables.$grey;
-  padding: 4rem 6rem;
+  padding: 2rem 8rem 4rem;
   @media (max-width: 768px) {
     padding: 1rem 1rem;
   }
@@ -108,7 +108,7 @@
   .restaurant__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 4rem;
     @media (max-width: 768px) {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -149,6 +149,12 @@
   .card {
     background-color: variables.$white;
     border-radius: 1rem 1rem;
+    -webkit-filter: brightness(75%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
     &:hover {
       @include mixins.zoom-effect;
     }
@@ -159,7 +165,7 @@
     }
     @for $i from 1 through 4 {
       &__image-#{$i} {
-        background-image: url("../assets/menu-#{$i}.jpg");
+        background-image: url("assets/menu-#{$i}.jpg");
       }
     }
     &__description {
