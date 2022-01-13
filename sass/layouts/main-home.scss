@@ -5,11 +5,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   background-color: variables.$grey;
   text-align: center;
   padding: 1rem;
   box-shadow: variables.$darkgrey;
+  & i {
+    font-size: 1.3rem;
+  }
   & input {
     @include mixins.location__search;
   }
@@ -21,17 +24,11 @@
   background-color: variables.$lightgrey;
   padding: 2rem 0;
   font-size: 1.1rem;
+  & p {
+    font-weight: lighter;
+  }
   & button {
-    color: variables.$white;
-    font-weight: 300;
-    font-size: 1.1rem;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 2rem;
-    background-image: variables.$linear-gradient;
-    cursor: pointer;
-    transition: transform 200ms;
-    @include mixins.basic-shadow;
+    @include mixins.btn;
   }
   & button:hover {
     @include mixins.zoom-effect;
@@ -149,12 +146,6 @@
   .card {
     background-color: variables.$white;
     border-radius: 1rem 1rem;
-    -webkit-filter: brightness(75%);
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    transition: all 1s ease;
     &:hover {
       @include mixins.zoom-effect;
     }

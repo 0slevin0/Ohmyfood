@@ -5,22 +5,32 @@
   background: variables.$grey;
   font-weight: bold;
   font-size: 1.1rem;
-
   margin-top: 5px;
   text-align: center;
   width: 150px;
 }
 
 @mixin basic-shadow {
-  box-shadow: 0.05rem 0.05rem 5px variables.$darkgrey;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
 }
 
 @mixin button-effect {
   transform: scale(1.05);
-  background-color: lighten(variables.$color-primary, 30%);
+  background-color: lighten(variables.$color-primary, 35%);
 }
 
 @mixin zoom-effect {
   transform: scale(1.05);
-  -webkit-filter: brightness(100%);
+}
+@mixin btn {
+  color: variables.$white;
+  font-weight: 300;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  background-image: variables.$linear-gradient;
+  cursor: pointer;
+  transition: transform 200ms;
+  @include basic-shadow;
 }

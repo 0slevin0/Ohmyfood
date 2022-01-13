@@ -9,8 +9,13 @@ $color-secondary: #ff79da;
 $color-tertiary: #99e2d0;
 $darkgrey: #353535;
 $linear-gradient: linear-gradient(
+  170deg,
+  rgba(255, 121, 218, 0.9),
+  rgba(147, 86, 220, 0.9)
+);
+$linear-gradient-2: linear-gradient(
   to top,
-  rgba(147, 86, 220, 0.9),
-  rgba(255, 121, 218, 0.9)
+  rgba(255, 121, 218, 0.9),
+  rgba(147, 86, 220, 0.9)
 );
 $font-cursive: "Shrikhand", cursive;

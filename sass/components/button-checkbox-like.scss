@@ -7,9 +7,12 @@
   transform: translateY(-50%);
 }
 
-.checkbox-like.checkbox-like--position {
-  position: initial;
-  margin-top: 20px;
+.checkbox-like.checkbox-like__position {
+  font-size: 2rem;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .checkbox-like input[type="checkbox"]:checked ~ .unchecked {
@@ -34,12 +37,12 @@
   }
 
   50% {
-    background: variables.$linear-gradient;
+    background: variables.$linear-gradient-2;
     -webkit-background-clip: text;
   }
 
   100% {
-    background: variables.$linear-gradient;
+    background: variables.$linear-gradient-2;
     -webkit-background-clip: text;
   }
 }
