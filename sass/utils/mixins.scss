@@ -34,3 +34,7 @@
   transition: transform 200ms;
   @include basic-shadow;
 }
+
+@mixin arrow-effect {
+  transform: scale(1.05) translateY(-50%);
+}

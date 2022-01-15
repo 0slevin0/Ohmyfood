@@ -1,5 +1,30 @@
 @use "../utils/variables.scss";
 @use "../utils/mixins.scss";
+@use "../utils/animations.scss";
+
+.header {
+  .header-menu {
+    position: relative;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 2rem;
+    height: 2rem;
+    width: 2rem;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: inherit;
+    &:hover {
+      color: variables.$color-primary;
+      @include mixins.arrow-effect;
+    }
+  }
+}
 
 .photopage {
   max-width: 100%;
@@ -50,15 +75,18 @@
     }
   }
   .menu__category {
-    background-color: variables.$white;
-    border-radius: 1rem;
     overflow: hidden;
-    @include mixins.basic-shadow;
+    border-radius: 1rem;
 
     .menu-item {
+      animation: appear 1s;
+
       display: flex;
       margin: 0;
       overflow: hidden;
+      background-color: variables.$white;
+      border-radius: 1rem;
+      @include mixins.basic-shadow;
 
       .menu-item__description {
         padding: 0 1rem;
