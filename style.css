@@ -376,16 +376,16 @@ footer i {
   height: 30rem;
 }
 .section__intro[data-background="1"] {
-  background-image: url(/assets/menu-1.jpg);
+  background-image: url("assets/menu-1.jpg");
 }
 .section__intro[data-background="2"] {
-  background-image: url(/assets/menu-2.jpg);
+  background-image: url("assets/menu-2.jpg");
 }
 .section__intro[data-background="3"] {
-  background-image: url(/assets/menu-3.jpg);
+  background-image: url("assets/menu-3.jpg");
 }
 .section__intro[data-background="4"] {
-  background-image: url(/assets/menu-4.jpg);
+  background-image: url("assets/menu-4.jpg");
 }
 
 .section__menu {

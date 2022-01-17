@@ -32,16 +32,16 @@
   height: 30rem;
 
   &[data-background="1"] {
-    background-image: url(/assets/menu-1.jpg);
+    background-image: url("assets/menu-1.jpg");
   }
   &[data-background="2"] {
-    background-image: url(/assets/menu-2.jpg);
+    background-image: url("assets/menu-2.jpg");
   }
   &[data-background="3"] {
-    background-image: url(/assets/menu-3.jpg);
+    background-image: url("assets/menu-3.jpg");
   }
   &[data-background="4"] {
-    background-image: url(/assets/menu-4.jpg);
+    background-image: url("assets/menu-4.jpg");
   }
 }
 
