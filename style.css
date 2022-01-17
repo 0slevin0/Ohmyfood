@@ -54,14 +54,6 @@ header {
     font-size: 4rem;
   }
 }
-@keyframes timeline {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
 
 /*section search*/
 .location {
@@ -214,17 +206,6 @@ header {
   animation-iteration-count: infinite;
   transition: none;
 }
-@keyframes clignoter {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 .restaurant .card {
   background-color: #fff;
   border-radius: 1rem 1rem;
@@ -259,12 +240,25 @@ header {
 .restaurant .card__description h3 {
   padding-top: 0.5rem;
 }
-.restaurant .card__description i {
+.restaurant .card__description .checkbox-like {
   font-size: 2rem;
   position: absolute;
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+}
+.restaurant .card__description .checkbox-like input[type=checkbox]:checked ~ .unchecked {
+  display: none;
+}
+.restaurant .card__description .checkbox-like input[type=checkbox]:checked ~ .checked {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0);
+}
+.restaurant .card__description .checkbox-like input[type=checkbox],
+.restaurant .card__description .checkbox-like .checked {
+  display: none;
+  animation: like 200ms;
+  animation-fill-mode: forwards;
 }
 
 footer {
@@ -295,39 +289,6 @@ footer i {
   padding: 0 0.5rem 0 0;
 }
 
-.checkbox-like {
-  font-size: 2rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.checkbox-like input[type=checkbox]:checked ~ .unchecked {
-  display: none;
-}
-
-.checkbox-like input[type=checkbox]:checked ~ .checked {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0);
-}
-
-.checkbox-like input[type=checkbox],
-.checkbox-like .checked {
-  display: none;
-  animation: like 200ms;
-  animation-fill-mode: forwards;
-}
-
-@keyframes like {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
-    -webkit-background-clip: text;
-  }
-}
 @keyframes show {
   0% {
     opacity: 0;
@@ -358,6 +319,34 @@ footer i {
   }
   to {
     -webkit-filter: hue-rotate(-45deg);
+  }
+}
+@keyframes clignoter {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes timeline {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
+    -webkit-background-clip: text;
   }
 }
 .header .header-menu {

@@ -24,15 +24,6 @@
     height: 100vh;
     font-size: 4rem;
   }
-
-  @keyframes timeline {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
 }
 
 /*section search*/
@@ -165,17 +156,6 @@
       animation-iteration-count: infinite;
       transition: none;
     }
-    @keyframes clignoter {
-      0% {
-        opacity: 1;
-      }
-      40% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
   }
 
   .card {
@@ -203,12 +183,29 @@
       h3 {
         padding-top: 0.5rem;
       }
-      i {
+
+      .checkbox-like {
         font-size: 2rem;
         position: absolute;
         right: 1rem;
         top: 50%;
         transform: translateY(-50%);
+      }
+
+      .checkbox-like input[type="checkbox"]:checked ~ .unchecked {
+        display: none;
+      }
+
+      .checkbox-like input[type="checkbox"]:checked ~ .checked {
+        display: inline-block;
+        color: rgba(255, 255, 255, 0);
+      }
+
+      .checkbox-like input[type="checkbox"],
+      .checkbox-like .checked {
+        display: none;
+        animation: like 200ms;
+        animation-fill-mode: forwards;
       }
     }
   }

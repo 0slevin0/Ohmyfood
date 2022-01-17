@@ -1,3 +1,5 @@
+@use "../utils/variables.scss";
+
 @keyframes show {
   0% {
     opacity: 0;
@@ -29,5 +31,34 @@
   }
   to {
     -webkit-filter: hue-rotate(-45deg);
+  }
+}
+@keyframes clignoter {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes timeline {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    background: variables.$linear-gradient-2;
+    -webkit-background-clip: text;
   }
 }
