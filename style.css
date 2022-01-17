@@ -16,6 +16,10 @@ a {
   color: inherit;
 }
 
+input {
+  display: none;
+}
+
 header {
   font-family: "Shrikhand", cursive;
   text-align: center;
@@ -299,14 +303,6 @@ footer i {
   transform: translateY(-50%);
 }
 
-.checkbox-like.checkbox-like__position {
-  font-size: 2rem;
-  position: absolute;
-  right: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .checkbox-like input[type=checkbox]:checked ~ .unchecked {
   display: none;
 }
@@ -327,23 +323,41 @@ footer i {
   0% {
     opacity: 0;
   }
-  50% {
-    background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
-    -webkit-background-clip: text;
-  }
   100% {
     background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
     -webkit-background-clip: text;
   }
 }
-@keyframes appear {
+@keyframes show {
   0% {
-    transform: translateY(100%);
     opacity: 0;
   }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes checked {
+  0% {
+    transform: rotateZ(100deg);
+  }
+  50% {
+    transform: rotateZ(-50deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes rotate-grad {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-45deg);
   }
 }
 .header .header-menu {
@@ -367,31 +381,63 @@ footer i {
   transform: scale(1.05) translateY(-50%);
 }
 
-.photopage {
-  max-width: 100%;
-  max-height: 30rem;
-  object-fit: cover;
-  width: 100%;
+.section__intro {
+  background-position: center;
+  background-size: cover;
+  height: 30rem;
+}
+.section__intro[data-background="1"] {
+  background-image: url(/assets/menu-1.jpg);
+}
+.section__intro[data-background="2"] {
+  background-image: url(/assets/menu-2.jpg);
+}
+.section__intro[data-background="3"] {
+  background-image: url(/assets/menu-3.jpg);
+}
+.section__intro[data-background="4"] {
+  background-image: url(/assets/menu-4.jpg);
 }
 
-.header_menu {
-  position: relative;
-  font-family: "Shrikhand", cursive;
+.section__menu {
   background-color: #f3f3f3;
+  border-radius: 2rem 2rem 0 0;
+  margin-top: -3rem;
+  padding: 2rem 2rem;
 }
-.header_menu_title {
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  background-color: #f3f3f3;
-  border-radius: 3rem 3rem 0 0;
+@media (max-width: 768px) {
+  .section__menu .section__menu-title {
+    padding: 0 4rem 0 0;
+  }
+  .section__menu .section__menu-title i {
+    right: 0;
+  }
 }
-.header_menu_title h2 {
+.section__menu-title {
   padding: 0 2rem;
+  position: relative;
+  width: 100%;
+  font-family: "Shrikhand", cursive;
+  font-size: 1.6rem;
 }
-
-.menus {
+.section__menu-title i {
+  bottom: 0;
+  color: black;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  right: 2rem;
+  transition: all 0.2s ease-in-out;
+}
+.section__menu-title i:hover {
+  background: linear-gradient(170deg, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
+  color: #fff;
+  font-weight: 600;
+  transform: scale(1.2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section__menu-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
@@ -399,103 +445,106 @@ footer i {
   background-color: #f3f3f3;
 }
 @media (max-width: 768px) {
-  .menus {
+  .section__menu-container {
     padding: 0rem 2rem;
   }
 }
-.menus h3 {
+.section__menu-container-title {
   margin: 2rem 0 0 0;
   text-transform: uppercase;
   font-weight: 300;
   position: relative;
 }
-.menus h3::after {
+.section__menu-container-title::after {
   content: "";
   position: absolute;
   background-color: #99e2d0;
   height: 0.2rem;
   width: 2.8rem;
-  top: 1.5rem;
+  top: 1.7rem;
   left: 0;
 }
-.menus .menu__category {
-  overflow: hidden;
-  border-radius: 1rem;
-}
-.menus .menu__category .menu-item {
-  animation: appear 1s;
-  display: flex;
-  margin: 0;
-  overflow: hidden;
+.section__menu-container-cards {
+  animation: show 0.5s ease-in-out;
+  animation-fill-mode: backwards;
   background-color: #fff;
   border-radius: 1rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
+  cursor: pointer;
+  display: flex;
+  overflow: hidden;
+  padding: 0 1rem;
+  width: 100%;
+  position: relative;
+  transition: all 0.2s ease-in-out;
 }
-.menus .menu__category .menu-item .menu-item__description {
+.section__menu-container-cards:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.section__menu-container-cards:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.section__menu-container-cards:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.section__menu-container-cards-info {
   padding: 0 1rem;
   overflow: hidden;
 }
-.menus .menu__category .menu-item .menu-item__description h4 {
+.section__menu-container-cards-title {
   margin: 0.5rem 0 0.1rem 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menus .menu__category .menu-item .menu-item__description p {
+.section__menu-container-cards-subtitle {
   margin: 0 0 0.5rem 0;
   font-size: 0.8rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menus .menu__category .menu-item .menu-item__price {
+.section__menu-container-cards-price {
   display: flex;
   align-items: flex-end;
   margin-left: auto;
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
-.menus .menu__category .menu-item .menu-item__check {
+.section__menu-container-cards-check {
   display: grid;
   place-items: center;
   flex-shrink: 0;
   overflow: hidden;
   background-color: #99e2d0;
   border-radius: 0 1rem 1rem 0;
-  margin-right: -4rem;
+  margin-right: -5rem;
   width: 4rem;
   transition: margin-right 500ms;
 }
-.menus .menu__category .menu-item .menu-item__check i {
+.section__menu-container-cards-check i {
   background-color: #fff;
   color: #99e2d0;
   border-radius: 50%;
   font-size: 1rem;
   padding: 0.3rem;
 }
-.menus .menu__category .menu-item:hover .menu-item__check {
+.section__menu-container-cards input:checked ~ .section__menu-container-cards-check {
+  margin-right: -1rem;
+}
+.section__menu-container-cards input:checked ~ .section__menu-container-cards-check i {
+  animation: checked 1s 1 ease-in-out;
+}
+.section__menu-container-cards:hover {
   margin-right: 0;
 }
-.menus .menu__category .menu-item:hover i {
-  animation-duration: 0.8s;
-  animation-name: rotate-spin;
-}
-@keyframes rotate-spin {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
-
-section.order {
+.section__menu .order {
   display: grid;
   place-items: center;
   background-color: #f3f3f3;
   padding: 3rem 0 5rem 0;
 }
-section.order button {
+.section__menu .order button {
   color: #fff;
   font-weight: 300;
   font-size: 1.1rem;
@@ -507,7 +556,7 @@ section.order button {
   transition: transform 200ms;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
 }
-section.order button:hover {
+.section__menu .order button:hover {
   transform: scale(1.05);
 }
 

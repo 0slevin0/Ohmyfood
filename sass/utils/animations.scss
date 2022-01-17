@@ -1,10 +1,33 @@
-@keyframes appear {
+@keyframes show {
   0% {
-    transform: translateY(100%);
     opacity: 0;
   }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes checked {
+  0% {
+    transform: rotateZ(100deg);
+  }
+  50% {
+    transform: rotateZ(-50deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes rotate-grad {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-45deg);
   }
 }
