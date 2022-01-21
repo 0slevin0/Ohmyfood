@@ -93,7 +93,7 @@
     padding: 0rem 15rem;
     background-color: variables.$grey;
     @media (max-width: 768px) {
-      padding: 0rem 2rem;
+      padding: 0;
     }
 
     &-title {
@@ -172,13 +172,16 @@
         transition: margin-right 500ms;
 
         i {
-          background-color: variables.$white;
-          color: variables.$color-tertiary;
+          color: variables.$white;
           border-radius: 50%;
-          font-size: 1rem;
+          font-size: 1.2rem;
           padding: 0.3rem;
         }
       }
+      input {
+        display: none;
+      }
+
       input:checked ~ .section__menu-container-cards-check {
         margin-right: -1rem;
 

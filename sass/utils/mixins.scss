@@ -20,7 +20,7 @@
 }
 
 @mixin zoom-effect {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 @mixin btn {
   color: variables.$white;

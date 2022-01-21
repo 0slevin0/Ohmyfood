@@ -8,7 +8,6 @@
 
 body {
   margin: 0px;
-  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -16,8 +15,8 @@ a {
   color: inherit;
 }
 
-input {
-  display: none;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -28,6 +27,66 @@ header {
   position: relative;
 }
 
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes checked {
+  0% {
+    transform: rotateZ(100deg);
+  }
+  50% {
+    transform: rotateZ(-50deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes rotate-grad {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-45deg);
+  }
+}
+@keyframes clignoter {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes timeline {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes like {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
+    -webkit-background-clip: text;
+  }
+}
 /*section loader*/
 .loader {
   position: fixed;
@@ -102,7 +161,7 @@ header {
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
 }
 .explore button:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 /*section process*/
@@ -211,12 +270,17 @@ header {
   border-radius: 1rem 1rem;
 }
 .restaurant .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 .restaurant .card__image {
   border-radius: 1rem 1rem 0 0;
   height: 20rem;
   background-size: cover;
+}
+@media (max-width: 768px) {
+  .restaurant .card__image {
+    height: 14rem;
+  }
 }
 .restaurant .card__image-1 {
   background-image: url("assets/menu-1.jpg");
@@ -240,25 +304,22 @@ header {
 .restaurant .card__description h3 {
   padding-top: 0.5rem;
 }
-.restaurant .card__description .checkbox-like {
+.restaurant .card__description i {
+  bottom: 1rem;
+  color: black;
+  cursor: pointer;
   font-size: 2rem;
   position: absolute;
   right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
 }
-.restaurant .card__description .checkbox-like input[type=checkbox]:checked ~ .unchecked {
-  display: none;
-}
-.restaurant .card__description .checkbox-like input[type=checkbox]:checked ~ .checked {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0);
-}
-.restaurant .card__description .checkbox-like input[type=checkbox],
-.restaurant .card__description .checkbox-like .checked {
-  display: none;
-  animation: like 200ms;
-  animation-fill-mode: forwards;
+.restaurant .card__description i:hover {
+  background: linear-gradient(170deg, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
+  color: #fff;
+  font-weight: 600;
+  transform: scale(1.2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 footer {
@@ -289,66 +350,6 @@ footer i {
   padding: 0 0.5rem 0 0;
 }
 
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes checked {
-  0% {
-    transform: rotateZ(100deg);
-  }
-  50% {
-    transform: rotateZ(-50deg);
-  }
-  100% {
-    transform: rotateZ(0deg);
-  }
-}
-@keyframes rotate-grad {
-  from {
-    -webkit-filter: hue-rotate(0deg);
-  }
-  to {
-    -webkit-filter: hue-rotate(-45deg);
-  }
-}
-@keyframes clignoter {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes timeline {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes like {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
-    -webkit-background-clip: text;
-  }
-}
 .header .header-menu {
   position: relative;
 }
@@ -435,7 +436,7 @@ footer i {
 }
 @media (max-width: 768px) {
   .section__menu-container {
-    padding: 0rem 2rem;
+    padding: 0;
   }
 }
 .section__menu-container-title {
@@ -512,11 +513,13 @@ footer i {
   transition: margin-right 500ms;
 }
 .section__menu-container-cards-check i {
-  background-color: #fff;
-  color: #99e2d0;
+  color: #fff;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0.3rem;
+}
+.section__menu-container-cards input {
+  display: none;
 }
 .section__menu-container-cards input:checked ~ .section__menu-container-cards-check {
   margin-right: -1rem;
@@ -546,7 +549,7 @@ footer i {
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
 }
 .section__menu .order button:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 /*# sourceMappingURL=style.css.map */

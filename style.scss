@@ -1,8 +1,9 @@
 @use "./sass/base/body.scss";
+@use "./sass/base/typography.scss";
 @use "./sass/layouts/header.scss";
 @use "./sass/layouts/main-home.scss";
 @use "./sass/layouts/footer.scss";
 @use "./sass/utils/mixins.scss";
 @use "./sass/utils/variables.scss";
-
+@use "./sass/utils/animations.scss";
 @use "./sass/layouts/menu.scss";

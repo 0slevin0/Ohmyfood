@@ -1,5 +1,6 @@
 @use "../utils/mixins.scss";
 @use "../utils/variables.scss";
+@use "../utils/animations.scss";
 /*section loader*/
 .loader {
   position: fixed;
@@ -168,6 +169,9 @@
       border-radius: 1rem 1rem 0 0;
       height: 20rem;
       background-size: cover;
+      @media (max-width: 768px) {
+        height: 14rem;
+      }
     }
     @for $i from 1 through 4 {
       &__image-#{$i} {
@@ -183,29 +187,24 @@
       h3 {
         padding-top: 0.5rem;
       }
-
-      .checkbox-like {
+      i {
+        bottom: 1rem;
+        color: black;
+        cursor: pointer;
         font-size: 2rem;
         position: absolute;
         right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-      }
 
-      .checkbox-like input[type="checkbox"]:checked ~ .unchecked {
-        display: none;
-      }
+        transition: all 0.2s ease-in-out;
 
-      .checkbox-like input[type="checkbox"]:checked ~ .checked {
-        display: inline-block;
-        color: rgba(255, 255, 255, 0);
-      }
-
-      .checkbox-like input[type="checkbox"],
-      .checkbox-like .checked {
-        display: none;
-        animation: like 200ms;
-        animation-fill-mode: forwards;
+        &:hover {
+          background: variables.$linear-gradient;
+          color: variables.$white;
+          font-weight: 600;
+          transform: scale(1.2);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
     }
   }
