@@ -194,11 +194,10 @@
         font-size: 2rem;
         position: absolute;
         right: 1rem;
-
         transition: all 0.2s ease-in-out;
 
         &:hover {
-          background: variables.$linear-gradient;
+          background: variables.$linear-gradient-2;
           color: variables.$white;
           font-weight: 600;
           transform: scale(1.2);

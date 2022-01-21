@@ -78,15 +78,6 @@ header {
     transform: scale(0);
   }
 }
-@keyframes like {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
-    -webkit-background-clip: text;
-  }
-}
 /*section loader*/
 .loader {
   position: fixed;
@@ -314,7 +305,7 @@ header {
   transition: all 0.2s ease-in-out;
 }
 .restaurant .card__description i:hover {
-  background: linear-gradient(170deg, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
+  background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
   color: #fff;
   font-weight: 600;
   transform: scale(1.2);
@@ -420,7 +411,7 @@ footer i {
   transition: all 0.2s ease-in-out;
 }
 .section__menu-title i:hover {
-  background: linear-gradient(170deg, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
+  background: linear-gradient(to top, rgba(255, 121, 218, 0.9), rgba(147, 86, 220, 0.9));
   color: #fff;
   font-weight: 600;
   transform: scale(1.2);
@@ -518,17 +509,11 @@ footer i {
   font-size: 1.2rem;
   padding: 0.3rem;
 }
-.section__menu-container-cards input {
-  display: none;
-}
-.section__menu-container-cards input:checked ~ .section__menu-container-cards-check {
+.section__menu-container-cards:hover .section__menu-container-cards-check {
   margin-right: -1rem;
 }
-.section__menu-container-cards input:checked ~ .section__menu-container-cards-check i {
+.section__menu-container-cards:hover .section__menu-container-cards-check i {
   animation: checked 1s 1 ease-in-out;
-}
-.section__menu-container-cards:hover {
-  margin-right: 0;
 }
 .section__menu .order {
   display: grid;
