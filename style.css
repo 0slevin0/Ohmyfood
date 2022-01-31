@@ -114,7 +114,7 @@ header {
   background-color: #f3f3f3;
   text-align: center;
   padding: 1rem;
-  box-shadow: #353535;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.13);
 }
 .location i {
   font-size: 1.3rem;
@@ -135,6 +135,9 @@ header {
   background-color: #fafafa;
   padding: 2rem 0;
   font-size: 1.1rem;
+}
+.explore h2 {
+  padding: 0 3rem;
 }
 .explore p {
   font-weight: lighter;
@@ -320,7 +323,7 @@ footer {
   gap: 0.5rem;
   background-color: #353535;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 @media (max-width: 768px) {
   footer {

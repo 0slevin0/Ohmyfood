@@ -36,7 +36,7 @@
   background-color: variables.$grey;
   text-align: center;
   padding: 1rem;
-  box-shadow: variables.$darkgrey;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 13%);
   & i {
     font-size: 1.3rem;
   }
@@ -51,6 +51,9 @@
   background-color: variables.$lightgrey;
   padding: 2rem 0;
   font-size: 1.1rem;
+  & h2 {
+    padding: 0 3rem;
+  }
   & p {
     font-weight: lighter;
   }
